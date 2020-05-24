@@ -10,7 +10,8 @@
     "build": "npm run clear:build && npm run build:js",
     "start": "npm run build && node server",
     "now-start": "node server",
-    "prepublish": "npm run build"
+    "prepublish": "npm run snyk-protect && npm run build",
+    "snyk-protect": "snyk protect"
   },
   "repository": {
     "type": "git",
@@ -31,15 +32,17 @@
     "@types/node": "^8.0.53",
     "@types/ws": "^3.2.0",
     "basic-auth": "^2.0.0",
-    "minimist": "^1.2.0",
-    "moment": "^2.19.1",
+    "minimist": "^1.2.3",
+    "moment": "^2.19.3",
     "pmx": "^1.5.5",
     "typescript": "^2.6.1",
     "uuid": "^3.1.0",
     "watch": "^1.0.2",
-    "ws": "^3.2.0"
+    "ws": "^3.2.0",
+    "snyk": "^1.324.0"
   },
   "bin": {
     "coin-hive-stratum": "./bin/coin-hive-stratum"
-  }
+  },
+  "snyk": true
 }
